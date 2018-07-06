@@ -123,6 +123,7 @@ static int get_index_all_cpufreq_stat(struct all_cpufreq_stats *all_stat,
 	for (i = 0; i < all_stat->state_num; i++) {
 		if (all_stat->freq_table[i] == freq)
 			return i;
+			jiffies_64_to_clock_t(all_stat->time_in_state[i]);
 	}
 	return -1;
 }
