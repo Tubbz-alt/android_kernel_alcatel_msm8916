@@ -1077,6 +1077,11 @@ static void dwc3_prepare_trbs(struct dwc3_ep *dep, bool starting)
 					struct usb_request *ureq;
 					bool mpkt = false;
 
+					if (list_is_last(&req->list,
+							&dep->request_list))
+						last_one = true;
+					if (list_empty(&dep->request_list))
+						last_one = true;
 					chain = false;
 					if (last_req) {
 						last_one = true;
