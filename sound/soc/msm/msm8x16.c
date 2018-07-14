@@ -2708,51 +2708,6 @@ static struct snd_soc_dai_link msm8x16_dai[] = {
 		 /* this dai link has playback support */
 		.be_id = MSM_FRONTEND_DAI_MULTIMEDIA19,
 	},
-        {/* hw:x,29 */
-		.name = "MSM8X16 Compress1",
-		.stream_name = "Compress1",
-		.cpu_dai_name	= "MultiMedia17",
-		.platform_name  = "msm-compress-dsp",
-		.dynamic = 1,
-		.trigger = {SND_SOC_DPCM_TRIGGER_POST,
-			 SND_SOC_DPCM_TRIGGER_POST},
-		.codec_dai_name = "snd-soc-dummy-dai",
-		.codec_name = "snd-soc-dummy",
-		.ignore_suspend = 1,
-		.ignore_pmdown_time = 1,
-		 /* this dai link has playback support */
-		.be_id = MSM_FRONTEND_DAI_MULTIMEDIA17,
-	},
-	{/* hw:x,30 */
-		.name = "MSM8X16 Compress2",
-		.stream_name = "Compress2",
-		.cpu_dai_name	= "MultiMedia18",
-		.platform_name  = "msm-compress-dsp",
-		.dynamic = 1,
-		.trigger = {SND_SOC_DPCM_TRIGGER_POST,
-			 SND_SOC_DPCM_TRIGGER_POST},
-		.codec_dai_name = "snd-soc-dummy-dai",
-		.codec_name = "snd-soc-dummy",
-		.ignore_suspend = 1,
-		.ignore_pmdown_time = 1,
-		 /* this dai link has playback support */
-		.be_id = MSM_FRONTEND_DAI_MULTIMEDIA18,
-	},
-	{/* hw:x,31 */
-		.name = "MSM8X16 Compress3",
-		.stream_name = "Compress3",
-		.cpu_dai_name	= "MultiMedia19",
-		.platform_name  = "msm-compress-dsp",
-		.dynamic = 1,
-		.trigger = {SND_SOC_DPCM_TRIGGER_POST,
-			 SND_SOC_DPCM_TRIGGER_POST},
-		.codec_dai_name = "snd-soc-dummy-dai",
-		.codec_name = "snd-soc-dummy",
-		.ignore_suspend = 1,
-		.ignore_pmdown_time = 1,
-		 /* this dai link has playback support */
-		.be_id = MSM_FRONTEND_DAI_MULTIMEDIA19,
-	},
 	/* Primary AUX PCM Backend DAI Links */
 	{
 		.name = LPASS_BE_AUXPCM_RX,
