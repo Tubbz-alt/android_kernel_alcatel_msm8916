@@ -45,7 +45,6 @@
 #include <linux/of_platform.h>
 #include <linux/dma-mapping.h>
 #include <linux/efi.h>
-#include <linux/personality.h>
 
 #include <asm/fixmap.h>
 #include <asm/cputype.h>
@@ -468,7 +467,7 @@ static int c_show(struct seq_file *m, void *v)
 	int i;
 
 	seq_printf(m, "Processor\t: %s rev %d (%s)\n",
-			cpu_name, read_cpuid_id() & 15, ELF_PLATFORM);
+		   cpu_name, read_cpuid_id() & 15, ELF_PLATFORM);
 
 	for_each_present_cpu(i) {
 		/*
