@@ -406,9 +406,7 @@ static void gpio_keys_gpio_report_event(struct gpio_button_data *bdata)
 			}
 //[PLATFORM] Add-End by wangxingchen 02/04/2015 .
 #endif
-           input_event(input, type, gpio_code, 1);
-           input_sync(input);
-           input_event(input, type, gpio_code, 0);
+           input_event(input, EV_SW, SW_LID, (hall_key == KEY_LOCK_LED_COVER));
         }
 		else
 		{
@@ -717,8 +715,7 @@ static int gpio_keys_setup_key(struct platform_device *pdev,
     || defined(CONFIG_TCT_8X16_IDOL3) \
     || defined(CONFIG_TCT_8X16_ALTO45_LATAM_B28) \
     || defined(CONFIG_TCT_8X16_M823_ORANGE)
-    input_set_capability(input, EV_KEY, KEY_UNLOCK_COVER);
-    input_set_capability(input, EV_KEY, KEY_LOCK_LED_COVER);
+    input_set_capability(input, EV_SW, SW_LID);
 
 #if defined(CONFIG_TCT_8X16_IDOL3) || defined(CONFIG_TCT_8X16_M823_ORANGE)
     input_set_capability(input, EV_KEY, KEY_LOCK_WINDOW_COVER);
